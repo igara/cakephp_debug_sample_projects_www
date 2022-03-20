@@ -4,12 +4,19 @@
     "homepage": "https://cakephp.org",
     "type": "project",
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../cakephp_debug_sample_projects_core"
+        }
+    ],
     "require": {
         "php": ">=7.2",
         "cakephp/cakephp": "^4.3",
         "cakephp/migrations": "^3.2",
         "cakephp/plugin-installer": "^1.3",
-        "mobiledetect/mobiledetectlib": "^2.8"
+        "mobiledetect/mobiledetectlib": "^2.8",
+        "projects/core": "dev-main"
     },
     "require-dev": {
         "cakephp/bake": "^2.6",
@@ -27,7 +34,8 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "App\\": "src/",
+            "Core\\": "vendor/projects/core/src/"
         }
     },
     "autoload-dev": {
