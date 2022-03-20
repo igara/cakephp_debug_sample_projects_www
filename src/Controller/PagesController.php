@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -14,6 +15,7 @@ declare(strict_types=1);
  * @since     0.2.9
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App\Controller;
 
 use Cake\Core\Configure;
@@ -45,6 +47,12 @@ class PagesController extends AppController
      */
     public function display(string ...$path): ?Response
     {
+        // $users = $this->fetchTable('Users')->find()->all();
+        // foreach ($users as $user) {
+        //     $user;
+        //     var_dump($user);
+        // }
+
         if (!$path) {
             return $this->redirect('/');
         }
