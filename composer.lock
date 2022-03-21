@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "015b2e809c754083cbb5d3774d129fae",
+    "content-hash": "f532d394bf7915d651cb049446d08baa",
     "packages": [
         {
             "name": "cakephp/cakephp",
@@ -674,7 +674,7 @@
             "dist": {
                 "type": "path",
                 "url": "../cakephp_debug_sample_projects_core",
-                "reference": "a7616a96fa9dc8c614681335d0e268d26002afc9"
+                "reference": "f4fb89d385f5c535a6d63a72e8e338b239810f1f"
             },
             "require": {
                 "cakephp/cakephp": "^4.3",
@@ -700,21 +700,22 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "App\\": "src/"
+                    "Core\\": "src/",
+                    "CoreCake\\": "vendor/cakephp/cakephp/src/"
                 }
             },
             "autoload-dev": {
                 "psr-4": {
-                    "App\\Test\\": "tests/",
-                    "Cake\\Test\\": "vendor/cakephp/cakephp/tests/"
+                    "Core\\Test\\": "tests/",
+                    "CoreCake\\Test\\": "vendor/cakephp/cakephp/tests/"
                 }
             },
             "scripts": {
                 "post-install-cmd": [
-                    "App\\Console\\Installer::postInstall"
+                    "Core\\Console\\Installer::postInstall"
                 ],
                 "post-create-project-cmd": [
-                    "App\\Console\\Installer::postInstall"
+                    "Core\\Console\\Installer::postInstall"
                 ],
                 "check": [
                     "@test",
@@ -739,6 +740,7 @@
             "description": "CakePHP skeleton app",
             "homepage": "https://cakephp.org",
             "transport-options": {
+                "symlink": false,
                 "relative": true
             }
         },

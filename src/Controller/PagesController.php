@@ -16,13 +16,14 @@ declare(strict_types=1);
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
 
-namespace App\Controller;
+namespace WWW\Controller;
 
 use Cake\Core\Configure;
 use Cake\Http\Exception\ForbiddenException;
 use Cake\Http\Exception\NotFoundException;
 use Cake\Http\Response;
 use Cake\View\Exception\MissingTemplateException;
+use Core\Model\Behavior\UserBehavior;
 
 /**
  * Static content controller
@@ -47,11 +48,10 @@ class PagesController extends AppController
      */
     public function display(string ...$path): ?Response
     {
-        // $users = $this->fetchTable('Users')->find()->all();
-        // foreach ($users as $user) {
-        //     $user;
-        //     var_dump($user);
-        // }
+        $users = UserBehavior::all();
+        foreach ($users as $user) {
+            var_dump($user->id);
+        }
 
         if (!$path) {
             return $this->redirect('/');

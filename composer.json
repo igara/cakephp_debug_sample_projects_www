@@ -7,7 +7,10 @@
     "repositories": [
         {
             "type": "path",
-            "url": "../cakephp_debug_sample_projects_core"
+            "url": "../cakephp_debug_sample_projects_core",
+            "options": {
+                "symlink": false
+            }
         }
     ],
     "require": {
@@ -34,19 +37,20 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/",
+            "WWW\\": "src/",
+            "WWWCake\\": "vendor/cakephp/cakephp/src/",
             "Core\\": "vendor/projects/core/src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Test\\": "tests/",
-            "Cake\\Test\\": "vendor/cakephp/cakephp/tests/"
+            "WWW\\Test\\": "tests/",
+            "WWWCake\\Test\\": "vendor/cakephp/cakephp/tests/"
         }
     },
     "scripts": {
-        "post-install-cmd": "App\\Console\\Installer::postInstall",
-        "post-create-project-cmd": "App\\Console\\Installer::postInstall",
+        "post-install-cmd": "WWW\\Console\\Installer::postInstall",
+        "post-create-project-cmd": "WWW\\Console\\Installer::postInstall",
         "check": [
             "@test",
             "@cs-check"
